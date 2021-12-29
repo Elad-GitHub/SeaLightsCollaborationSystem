@@ -1,4 +1,5 @@
-﻿using ReportsCollaborationAPI.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using ReportsCollaborationAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace ReportsCollaborationAPI.Services
 
         public void AddNote(Note note)
         {
-            throw new NotImplementedException();
+            _noteContext.Notes.Add(note);
+
+            _noteContext.SaveChanges();
         }
 
         public void AddNotes(List<Note> notes)
@@ -26,17 +29,25 @@ namespace ReportsCollaborationAPI.Services
 
         public void DeleteNote(Note note)
         {
-            throw new NotImplementedException();
+            _noteContext.Notes.Remove(note);
+
+            _noteContext.SaveChanges();
         }
 
         public void EditNote(Note note)
-        {
-            throw new NotImplementedException();
+        {    
+            _noteContext.Notes.Update(note);
+
+            _noteContext.SaveChanges();
         }
 
         public Note GetNoteById(int noteId)
         {
-            return _noteContext.Notes.Find(noteId);
+            var note = _noteContext.Notes.Find(noteId);
+
+            _noteContext.Entry(note).State = EntityState.Detached;
+
+            return note;
         }
 
         public List<Note> GetNotes()
