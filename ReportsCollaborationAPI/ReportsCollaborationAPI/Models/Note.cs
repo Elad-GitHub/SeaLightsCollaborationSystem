@@ -15,6 +15,6 @@ namespace ReportsCollaborationAPI.Models
 
         public string Text { get; set; }
 
-        public string CollaboratorId { get; set; }
+        public int CollaboratorId { get; set; }
     }
 }

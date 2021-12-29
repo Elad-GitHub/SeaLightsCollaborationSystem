@@ -34,7 +34,7 @@ namespace ReportsCollaborationAPI.Services
             throw new NotImplementedException();
         }
 
-        public Note GetNote(int noteId)
+        public Note GetNoteById(int noteId)
         {
             return _noteContext.Notes.Find(noteId);
         }

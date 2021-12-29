@@ -25,8 +25,8 @@ namespace ReportsCollaborationAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CollaboratorId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CollaboratorId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ReportId")
                         .HasColumnType("int");

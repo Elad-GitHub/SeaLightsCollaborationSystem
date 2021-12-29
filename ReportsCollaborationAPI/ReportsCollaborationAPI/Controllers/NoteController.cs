@@ -10,9 +10,9 @@ namespace ReportsCollaborationAPI.Controllers
         private readonly ILogger<NoteController> _logger;
         private INoteDataService _noteDataService;
 
-        public NoteController(INoteDataService noteDataService, ILogger<NoteController> logger)
+        public NoteController(INoteDataService noteDataService)//, ILogger<NoteController> logger)
         {
-            _logger = logger;
+            //_logger = logger;
             _noteDataService = noteDataService;
         }
 
@@ -25,9 +25,16 @@ namespace ReportsCollaborationAPI.Controllers
 
         [HttpGet]
         [Route("[controller]/{noteId}")]
-        public IActionResult GetNote(int noteId)
+        public IActionResult GetNoteById(int noteId)
         {
-            return Ok(_noteDataService.GetNote(noteId));
+            var note = _noteDataService.GetNoteById(noteId);
+
+            if(note == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(note);
         }
     }
 }

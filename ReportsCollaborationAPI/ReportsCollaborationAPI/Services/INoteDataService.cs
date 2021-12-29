@@ -5,7 +5,7 @@ namespace ReportsCollaborationAPI.Services
 {
     public interface INoteDataService
     {
-        Note GetNote(int noteId);
+        Note GetNoteById(int noteId);
         
         List<Note> GetNotes();
 
