@@ -2,7 +2,7 @@
 
 namespace ReportsCollaborationAPI.Migrations
 {
-    public partial class InitialMigrtion : Migration
+    public partial class Test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace ReportsCollaborationAPI.Migrations
                     ReportId = table.Column<int>(type: "int", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CollaboratorId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CollaboratorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

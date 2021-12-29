@@ -9,8 +9,8 @@ using ReportsCollaborationAPI.Models;
 namespace ReportsCollaborationAPI.Migrations
 {
     [DbContext(typeof(NoteContext))]
-    [Migration("20211229164321_InitialMigrtion")]
-    partial class InitialMigrtion
+    [Migration("20211229180403_Test")]
+    partial class Test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,8 +27,8 @@ namespace ReportsCollaborationAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CollaboratorId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CollaboratorId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ReportId")
                         .HasColumnType("int");
