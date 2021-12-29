@@ -9,19 +9,19 @@ namespace ReportsCollaborationAPITests
 {
     public class NoteControllerTest
     {
-        private readonly NoteController _controller;
+        private readonly NoteController _noteController;
         private readonly INoteDataService _service;
 
         public NoteControllerTest()
         {
             _service = new MockNoteDataService();
-            _controller = new NoteController(_service);
+            _noteController = new NoteController(_service);
         }
 
         [Fact]
         public void GetNotes_WhenCalled_ReturnsOkResult()
         {
-            var okResult = _controller.GetNotes();
+            var okResult = _noteController.GetNotes();
 
             Assert.IsType<OkObjectResult>(okResult as OkObjectResult);
         }
@@ -29,7 +29,7 @@ namespace ReportsCollaborationAPITests
         [Fact]
         public void GetNotes_WhenCalled_ReturnsAllItems()
         {
-            var okResult = _controller.GetNotes() as OkObjectResult;
+            var okResult = _noteController.GetNotes() as OkObjectResult;
 
             var items = Assert.IsType<List<Note>>(okResult.Value);
 
@@ -39,7 +39,7 @@ namespace ReportsCollaborationAPITests
         [Fact]
         public void GetNoteById_UnknownIdPassed_ReturnsNotFoundResult()
         {
-            var notFoundResult = _controller.GetNoteById(3);
+            var notFoundResult = _noteController.GetNoteById(3);
             
             Assert.IsType<NotFoundResult>(notFoundResult);
         }
@@ -47,7 +47,7 @@ namespace ReportsCollaborationAPITests
         [Fact]
         public void GetNoteById_ExistingIdPassed_ReturnsOkResult()
         {
-            var okResult = _controller.GetNoteById(1);
+            var okResult = _noteController.GetNoteById(1);
 
             Assert.IsType<OkObjectResult>(okResult as OkObjectResult);
         }
@@ -55,7 +55,7 @@ namespace ReportsCollaborationAPITests
         [Fact]
         public void GetNoteById_ExistingIDPassed_ReturnsRightItem()
         {
-            var okResult = _controller.GetNoteById(1) as OkObjectResult;
+            var okResult = _noteController.GetNoteById(1) as OkObjectResult;
             
             Assert.IsType<Note>(okResult.Value);
             
