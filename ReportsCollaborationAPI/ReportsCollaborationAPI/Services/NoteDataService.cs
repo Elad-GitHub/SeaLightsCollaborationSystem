@@ -14,31 +14,9 @@ namespace ReportsCollaborationAPI.Services
         {
             _noteContext = noteContext;
         }
-
-        public void AddNote(Note note)
+        public List<Note> GetNotes()
         {
-            _noteContext.Notes.Add(note);
-
-            _noteContext.SaveChanges();
-        }
-
-        public void AddNotes(List<Note> notes)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteNote(Note note)
-        {
-            _noteContext.Notes.Remove(note);
-
-            _noteContext.SaveChanges();
-        }
-
-        public void EditNote(Note note)
-        {    
-            _noteContext.Notes.Update(note);
-
-            _noteContext.SaveChanges();
+            return _noteContext.Notes.ToList();
         }
 
         public Note GetNoteById(int noteId)
@@ -50,9 +28,25 @@ namespace ReportsCollaborationAPI.Services
             return note;
         }
 
-        public List<Note> GetNotes()
+        public void AddNote(Note note)
         {
-            return _noteContext.Notes.ToList();
+            _noteContext.Notes.Add(note);
+
+            _noteContext.SaveChanges();
+        }
+
+        public void EditNote(Note note)
+        {
+            _noteContext.Notes.Update(note);
+
+            _noteContext.SaveChanges();
+        }
+
+        public void DeleteNote(Note note)
+        {
+            _noteContext.Notes.Remove(note);
+
+            _noteContext.SaveChanges();
         }
     }
 }

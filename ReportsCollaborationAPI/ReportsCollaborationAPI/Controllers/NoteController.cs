@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Logging;
 using ReportsCollaborationAPI.Models;
 using ReportsCollaborationAPI.Services;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ReportsCollaborationAPI.Controllers
@@ -43,9 +45,15 @@ namespace ReportsCollaborationAPI.Controllers
         [Route("[controller]")]
         public IActionResult AddNote(Note note)
         {
+            if(note.Title == null)
+            {
+                return BadRequest("Title is Required");
+            }
+
             _noteDataService.AddNote(note);
 
-            return Created($"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{HttpContext.Request.Path}/{note.Id}", note);
+            return HttpContext != null ? 
+                Created($"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{HttpContext.Request.Path}/{note.Id}", note) : Created($"", note);
         }
 
         [HttpPatch]

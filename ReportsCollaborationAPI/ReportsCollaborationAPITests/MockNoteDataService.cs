@@ -1,8 +1,6 @@
 ﻿using ReportsCollaborationAPI.Models;
 using ReportsCollaborationAPI.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ReportsCollaborationAPITests
 {
@@ -30,22 +28,20 @@ namespace ReportsCollaborationAPITests
 
         public void AddNote(Note note)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AddNotes(List<Note> notes)
-        {
-            throw new NotImplementedException();
+            notes.Add(note);
         }
 
         public void DeleteNote(Note note)
         {
-            throw new NotImplementedException();
+            notes.Remove(note);
         }
 
         public void EditNote(Note note)
         {
-            throw new NotImplementedException();
+            var existingNote = GetNoteById(note.Id.Value);
+            
+            existingNote.Title = note.Title;
+            existingNote.Text = note.Text;
         }
 
         public Note GetNoteById(int noteId)
