@@ -13,6 +13,6 @@ namespace ReportsCollaborationAPI.Models
 
         public int CollaboratorId { get; set; }
 
-        public PrivacyType Privacy { get; set; }
+        public PrivacyLevel Privacy { get; set; }
     }
 }

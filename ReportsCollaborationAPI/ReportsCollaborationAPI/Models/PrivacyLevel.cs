@@ -1,6 +1,6 @@
 ﻿namespace ReportsCollaborationAPI.Models
 {
-    public enum PrivacyType
+    public enum PrivacyLevel
     {
         Public,
         Private

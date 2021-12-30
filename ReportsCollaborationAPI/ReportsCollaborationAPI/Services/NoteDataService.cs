@@ -15,8 +15,8 @@ namespace ReportsCollaborationAPI.Services
 
         public List<Note> GetNotes(int reportId, int collaboratorId)
         {
-            return _Context.Notes.Where(note => note.ParentId == reportId && (note.Privacy == PrivacyType.Public || 
-                                                (note.Privacy == PrivacyType.Private && note.CollaboratorId == collaboratorId))).ToList();
+            return _Context.Notes.Where(note => note.ParentId == reportId && (note.Privacy == PrivacyLevel.Public || 
+                                                (note.Privacy == PrivacyLevel.Private && note.CollaboratorId == collaboratorId))).ToList();
         }
 
         public void AddNote(Note note)

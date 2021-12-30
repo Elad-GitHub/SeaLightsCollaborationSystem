@@ -62,7 +62,7 @@ namespace ReportsCollaborationAPITests
                 Title = "test title 5",
                 Text = "test text 5",
                 CollaboratorId = 2,
-                Privacy = PrivacyType.Private
+                Privacy = PrivacyLevel.Private
             };
 
             var createdResponse = _noteController.AddNote(note);
@@ -80,7 +80,7 @@ namespace ReportsCollaborationAPITests
                 Title = "test title 6",
                 Text = "test text 6",
                 CollaboratorId = 2,
-                Privacy = PrivacyType.Public
+                Privacy = PrivacyLevel.Public
             };
 
             var createdResponse = _noteController.AddNote(note) as CreatedResult;

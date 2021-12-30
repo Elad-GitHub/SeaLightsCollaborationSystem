@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace ReportsCollaborationAPITests
 {
+    //A Mock to represnt the file data service with fake data
     public class MockFileDataService : IFileDataService
     {
         private List<File> files = new List<File>()
@@ -15,7 +16,7 @@ namespace ReportsCollaborationAPITests
                 ParentId = 1,
                 Link = string.Empty,
                 CollaboratorId = 1,
-                Privacy = PrivacyType.Public
+                Privacy = PrivacyLevel.Public
             },
             new File()
             {
@@ -23,7 +24,7 @@ namespace ReportsCollaborationAPITests
                 ParentId = 1,
                 Link = string.Empty,
                 CollaboratorId = 1,
-                Privacy = PrivacyType.Private
+                Privacy = PrivacyLevel.Private
             },
             new File()
             {
@@ -31,7 +32,7 @@ namespace ReportsCollaborationAPITests
                 ParentId = 1,
                 Link = string.Empty,
                 CollaboratorId = 2,
-                Privacy = PrivacyType.Public
+                Privacy = PrivacyLevel.Public
             },
             new File()
             {
@@ -39,14 +40,14 @@ namespace ReportsCollaborationAPITests
                 ParentId = 1,
                 Link = string.Empty,
                 CollaboratorId = 2,
-                Privacy = PrivacyType.Private
+                Privacy = PrivacyLevel.Private
             }
         };
 
         public List<File> GetFiles(int reportId, int collaboratorId)
         {
-            return files.Where(file => file.ParentId == reportId && (file.Privacy == PrivacyType.Public ||
-                                                (file.Privacy == PrivacyType.Private && file.CollaboratorId == collaboratorId))).ToList();
+            return files.Where(file => file.ParentId == reportId && (file.Privacy == PrivacyLevel.Public ||
+                                                (file.Privacy == PrivacyLevel.Private && file.CollaboratorId == collaboratorId))).ToList();
         }
 
         public void AddFile(File file)

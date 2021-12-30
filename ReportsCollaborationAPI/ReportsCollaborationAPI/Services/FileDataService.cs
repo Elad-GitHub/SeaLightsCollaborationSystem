@@ -15,8 +15,8 @@ namespace ReportsCollaborationAPI.Services
 
         public List<File> GetFiles(int parentId, int collaboratorId)
         {
-            return _Context.Files.Where(note => note.ParentId == parentId && (note.Privacy == PrivacyType.Public ||
-                                                (note.Privacy == PrivacyType.Private && note.CollaboratorId == collaboratorId))).ToList();
+            return _Context.Files.Where(note => note.ParentId == parentId && (note.Privacy == PrivacyLevel.Public ||
+                                                (note.Privacy == PrivacyLevel.Private && note.CollaboratorId == collaboratorId))).ToList();
         }
 
         public void AddFile(File file)

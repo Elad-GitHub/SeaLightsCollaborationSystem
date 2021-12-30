@@ -30,8 +30,10 @@ namespace ReportsCollaborationAPI.Controllers
         [Route("[controller]/DownloadFile/{Id}/{parentId}/{collaboratorId}")]
         public async Task<IActionResult> DownloadFile(int Id, int parentId, int collaboratorId)
         {
+            //get all report user files
             var files = _fileDataService.GetFiles(parentId, collaboratorId);
 
+            //filter only wnated file to download
             var existingFile = files.FirstOrDefault(file => file.Id == Id);
 
             if (existingFile == null)

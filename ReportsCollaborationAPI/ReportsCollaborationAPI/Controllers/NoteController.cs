@@ -18,6 +18,7 @@ namespace ReportsCollaborationAPI.Controllers
         [Route("[controller]/GetNotes/{reportId}/{collaboratorId}")]
         public IActionResult GetNotes(int reportId, int collaboratorId)
         {
+            //get all report user notes
             var notes = _noteDataService.GetNotes(reportId, collaboratorId);
 
             return Ok(notes);
@@ -32,6 +33,7 @@ namespace ReportsCollaborationAPI.Controllers
                 return BadRequest("Title is Required");
             }
 
+            //add a note to a given report
             _noteDataService.AddNote(note);
 
             return HttpContext != null ? 
