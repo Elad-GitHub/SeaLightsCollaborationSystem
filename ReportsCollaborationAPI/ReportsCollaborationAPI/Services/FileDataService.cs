@@ -7,9 +7,10 @@ namespace ReportsCollaborationAPI.Services
     public class FileDataService : IFileDataService
     {
         private CollaborationSystemContext _Context;
-        public FileDataService(CollaborationSystemContext noteContext)
+
+        public FileDataService(CollaborationSystemContext context)
         {
-            _Context = noteContext;
+            _Context = context;
         }
 
         public List<File> GetFiles(int parentId, int collaboratorId)

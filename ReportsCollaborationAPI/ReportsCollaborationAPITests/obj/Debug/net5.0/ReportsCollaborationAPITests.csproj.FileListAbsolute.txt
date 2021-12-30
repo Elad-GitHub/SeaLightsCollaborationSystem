@@ -140,3 +140,6 @@ C:\Users\Elad Cohen\Desktop\SeaLightsCollaborationSystem\ReportsCollaborationAPI
 C:\Users\Elad Cohen\Desktop\SeaLightsCollaborationSystem\ReportsCollaborationAPI\ReportsCollaborationAPITests\obj\Debug\net5.0\ref\ReportsCollaborationAPITests.dll
 C:\Users\Elad Cohen\Desktop\SeaLightsCollaborationSystem\ReportsCollaborationAPI\ReportsCollaborationAPITests\obj\Debug\net5.0\ReportsCollaborationAPITests.pdb
 C:\Users\Elad Cohen\Desktop\SeaLightsCollaborationSystem\ReportsCollaborationAPI\ReportsCollaborationAPITests\obj\Debug\net5.0\ReportsCollaborationAPITests.genruntimeconfig.cache
+C:\Users\Elad Cohen\Desktop\SeaLightsCollaborationSystem\ReportsCollaborationAPI\ReportsCollaborationAPITests\bin\Debug\net5.0\NLog.dll
+C:\Users\Elad Cohen\Desktop\SeaLightsCollaborationSystem\ReportsCollaborationAPI\ReportsCollaborationAPITests\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+C:\Users\Elad Cohen\Desktop\SeaLightsCollaborationSystem\ReportsCollaborationAPI\ReportsCollaborationAPITests\bin\Debug\net5.0\NLog.Web.AspNetCore.dll

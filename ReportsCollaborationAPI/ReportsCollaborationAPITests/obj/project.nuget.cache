@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "te65CaUbDVQ0T/gPG0s1Czw97fGzy/oMtPaoeyEVw64QV1/lyjjMqRD3ekFO7M8XG+jR+naITlyawLpYFopH4A==",
+  "dgSpecHash": "EiV/pNdyuDkydJAC0zmvjJTwLkNdnYiZBcFc0plH7bGvvKpp0X+VJ2tecVtdjvNfQ9Po8DiZNq6iMFcFoe8SAQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Elad Cohen\\Desktop\\SeaLightsCollaborationSystem\\ReportsCollaborationAPI\\ReportsCollaborationAPITests\\ReportsCollaborationAPITests.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,9 @@
     "C:\\Users\\Elad Cohen\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Elad Cohen\\.nuget\\packages\\nlog\\5.0.0-rc1\\nlog.5.0.0-rc1.nupkg.sha512",
+    "C:\\Users\\Elad Cohen\\.nuget\\packages\\nlog.extensions.logging\\5.0.0-rc1\\nlog.extensions.logging.5.0.0-rc1.nupkg.sha512",
+    "C:\\Users\\Elad Cohen\\.nuget\\packages\\nlog.web.aspnetcore\\5.0.0-rc1\\nlog.web.aspnetcore.5.0.0-rc1.nupkg.sha512",
     "C:\\Users\\Elad Cohen\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

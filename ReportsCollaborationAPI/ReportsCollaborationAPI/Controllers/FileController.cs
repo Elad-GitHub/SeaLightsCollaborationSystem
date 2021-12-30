@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using ReportsCollaborationAPI.Models;
 using ReportsCollaborationAPI.Services;
 using System;
 using System.IO;
@@ -37,7 +35,9 @@ namespace ReportsCollaborationAPI.Controllers
             var existingFile = files.FirstOrDefault(file => file.Id == Id);
 
             if (existingFile == null)
-                return NotFound(); // returns a NotFoundResult with Status404NotFound response.
+            {
+                return NotFound();
+            }
 
             var bytes = await System.IO.File.ReadAllBytesAsync(existingFile.Link);
 
@@ -48,23 +48,27 @@ namespace ReportsCollaborationAPI.Controllers
         [Route("[controller]/UploadFile/{parentId}/{collaboratorId}")]
         public async Task<IActionResult> UploadFile(int parentId, int collaboratorId, IFormFile file, CancellationToken cancellationToken)
         {
-            if (ValidateFileType(file) && ValidateFileSize(file))
+            if (!ValidateFileType(file))
             {
-                await WriteFile(file, parentId, collaboratorId);
+                return BadRequest(new { message = "Invalid File! The file upload has been blocked because its type can not be .exe / .js / .vbs" });
             }
-            else
+            else if(!ValidateFileSize(file))
             {
-                return BadRequest(new { message = "Invalid file"});
+                return BadRequest(new { message = "Invalid File! The file upload has been blocked because its size can not be bigger than 10 mb" });
             }
+
+            await WriteFile(file, parentId, collaboratorId);
 
             return Ok();
         }
 
+        //check if file size is less than 10 mb
         private bool ValidateFileSize(IFormFile file)
         {
             return (file.Length < 10000000);
         }
 
+        //check if file type is valid
         private bool ValidateFileType(IFormFile file)
         {
             var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
@@ -83,14 +87,14 @@ namespace ReportsCollaborationAPI.Controllers
                 //Create a new Name for the file due to security reasons.
                 string fileName = DateTime.Now.Ticks + extension; 
 
-                var pathBuilt = Path.Combine(Directory.GetCurrentDirectory(), "Upload\\files");
+                var pathBuilt = Path.Combine(Directory.GetCurrentDirectory(), "Repository\\files");
 
                 if (!Directory.Exists(pathBuilt))
                 {
                     Directory.CreateDirectory(pathBuilt);
                 }
 
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "Upload\\files", fileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "Repository\\files", fileName);
 
                 var fileToSave = new Models.File()
                 {

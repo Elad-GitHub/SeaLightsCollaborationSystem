@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PXHnoj+5VyB/ywLeEzS+NVmhOdvaSIHd1nBUgCqHyLk/qaz7XQ3JqfsuCVeD7zEik+BWNkks+X03oQGkZKELSg==",
+  "dgSpecHash": "MUPxhAcLllUTNeVrRatsnDCbdXJ7AYBI86dfMAfqIkcGz3P1UvXhq6sNvLO/HqGD8EQq9PTeokzRVjdxfDZotQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Elad Cohen\\Desktop\\SeaLightsCollaborationSystem\\ReportsCollaborationAPI\\ReportsCollaborationAPI\\ReportsCollaborationAPI.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,9 @@
     "C:\\Users\\Elad Cohen\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Elad Cohen\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\Elad Cohen\\.nuget\\packages\\nlog\\5.0.0-rc1\\nlog.5.0.0-rc1.nupkg.sha512",
+    "C:\\Users\\Elad Cohen\\.nuget\\packages\\nlog.extensions.logging\\5.0.0-rc1\\nlog.extensions.logging.5.0.0-rc1.nupkg.sha512",
+    "C:\\Users\\Elad Cohen\\.nuget\\packages\\nlog.web.aspnetcore\\5.0.0-rc1\\nlog.web.aspnetcore.5.0.0-rc1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Elad Cohen\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\Elad Cohen\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

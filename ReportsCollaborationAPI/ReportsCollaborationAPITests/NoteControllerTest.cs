@@ -18,32 +18,6 @@ namespace ReportsCollaborationAPITests
             _noteController = new NoteController(_service);
         }
 
-        //[Fact]
-        //public void GetNoteById_UnknownIdPassed_ReturnsNotFoundResult()
-        //{
-        //    var notFoundResult = _noteController.GetNoteById(3);
-
-        //    Assert.IsType<NotFoundObjectResult>(notFoundResult);
-        //}
-
-        //[Fact]
-        //public void GetNoteById_ExistingIdPassed_ReturnsOkResult()
-        //{
-        //    var okResult = _noteController.GetNoteById(1);
-
-        //    Assert.IsType<OkObjectResult>(okResult as OkObjectResult);
-        //}
-
-        //[Fact]
-        //public void GetNoteById_ExistingIDPassed_ReturnsRightItem()
-        //{
-        //    var okResult = _noteController.GetNoteById(1) as OkObjectResult;
-
-        //    Assert.IsType<Note>(okResult.Value);
-
-        //    Assert.Equal(1, (okResult.Value as Note).Id);
-        //}
-
         [Fact]
         public void GetNotes_WhenCalled_ReturnsOkResult()
         {
@@ -117,35 +91,5 @@ namespace ReportsCollaborationAPITests
 
             Assert.Equal("test title 6", item.Title);
         }
-
-        //[Fact]
-        //public void DeleteNote_NotExistingIdPassed_ReturnsNotFoundResponse()
-        //{
-        //    var notExistingID = 1454;
-
-        //    var badResponse = _noteController.DeleteNote(notExistingID);
-
-        //    Assert.IsType<NotFoundObjectResult>(badResponse);
-        //}
-
-        //[Fact]
-        //public void DeleteNote_ExistingGuidPassed_ReturnsOkResult()
-        //{
-        //    var existingID = 1;
-            
-        //    var noContentResponse = _noteController.DeleteNote(existingID);
-            
-        //    Assert.IsType<OkResult>(noContentResponse);
-        //}
-
-        //[Fact]
-        //public void DeleteNote_ExistingGuidPassed_RemovesOneItem()
-        //{
-        //    var existingID = 1;
-            
-        //    var okResponse = _noteController.DeleteNote(existingID);
-            
-        //    Assert.Equal(1, _service.GetNotes().Count);
-        //}
     }
 }

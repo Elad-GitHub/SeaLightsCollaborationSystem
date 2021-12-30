@@ -5,57 +5,53 @@ using System.Linq;
 
 namespace ReportsCollaborationAPITests
 {
-    public class MockNoteDataService : INoteDataService
+    public class MockFileDataService : IFileDataService
     {
-        private List<Note> notes = new List<Note>()
+        private List<File> files = new List<File>()
         {
-            new Note()
+            new File()
             {
                 Id = 1,
                 ParentId = 1,
-                Title = "test title 1",
-                Text = "test text 1",
+                Link = string.Empty,
                 CollaboratorId = 1,
                 Privacy = PrivacyType.Public
             },
-            new Note()
+            new File()
             {
                 Id = 2,
                 ParentId = 1,
-                Title = "test title 2",
-                Text = "test text 2",
+                Link = string.Empty,
                 CollaboratorId = 1,
                 Privacy = PrivacyType.Private
             },
-            new Note()
+            new File()
             {
                 Id = 3,
                 ParentId = 1,
-                Title = "test title 3",
-                Text = "test text 3",
+                Link = string.Empty,
                 CollaboratorId = 2,
                 Privacy = PrivacyType.Public
             },
-            new Note()
+            new File()
             {
                 Id = 4,
                 ParentId = 1,
-                Title = "test title 4",
-                Text = "test text 4",
+                Link = string.Empty,
                 CollaboratorId = 2,
                 Privacy = PrivacyType.Private
             }
         };
 
-        public List<Note> GetNotes(int reportId, int collaboratorId)
+        public List<File> GetFiles(int reportId, int collaboratorId)
         {
-            return notes.Where(note => note.ParentId == reportId && (note.Privacy == PrivacyType.Public ||
-                                                (note.Privacy == PrivacyType.Private && note.CollaboratorId == collaboratorId))).ToList();
+            return files.Where(file => file.ParentId == reportId && (file.Privacy == PrivacyType.Public ||
+                                                (file.Privacy == PrivacyType.Private && file.CollaboratorId == collaboratorId))).ToList();
         }
 
-        public void AddNote(Note note)
+        public void AddFile(File file)
         {
-            notes.Add(note);
+            files.Add(file);
         }
     }
 }

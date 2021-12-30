@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ReportsCollaborationAPI.Models;
-using System;
+﻿using ReportsCollaborationAPI.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,19 +8,10 @@ namespace ReportsCollaborationAPI.Services
     {
         private CollaborationSystemContext _Context; 
 
-        public NoteDataService(CollaborationSystemContext noteContext)
+        public NoteDataService(CollaborationSystemContext context)
         {
-            _Context = noteContext;
+            _Context = context;
         }
-
-        //public Note GetNoteById(int noteId)
-        //{
-        //    var note = _Context.Notes.Find(noteId);
-
-        //    _Context.Entry(note).State = EntityState.Detached;
-
-        //    return note;
-        //}
 
         public List<Note> GetNotes(int reportId, int collaboratorId)
         {
@@ -36,19 +25,5 @@ namespace ReportsCollaborationAPI.Services
 
             _Context.SaveChanges();
         }
-
-        //public void EditNote(Note note)
-        //{
-        //    _Context.Notes.Update(note);
-
-        //    _Context.SaveChanges();
-        //}
-
-        //public void DeleteNote(Note note)
-        //{
-        //    _Context.Notes.Remove(note);
-
-        //    _Context.SaveChanges();
-        //}
     }
 }

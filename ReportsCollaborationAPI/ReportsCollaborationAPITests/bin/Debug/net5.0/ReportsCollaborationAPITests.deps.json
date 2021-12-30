@@ -647,6 +647,38 @@
           }
         }
       },
+      "NLog/5.0.0-rc1": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.539"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/5.0.0-rc1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "NLog": "5.0.0-rc1"
+        },
+        "runtime": {
+          "lib/net5.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.97"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/5.0.0-rc1": {
+        "dependencies": {
+          "NLog.Extensions.Logging": "5.0.0-rc1"
+        },
+        "runtime": {
+          "lib/net5.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.119.0"
+          }
+        }
+      },
       "NuGet.Frameworks/5.0.0": {
         "runtime": {
           "lib/netstandard2.0/NuGet.Frameworks.dll": {
@@ -1632,6 +1664,7 @@
       "ReportsCollaborationAPI/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.13",
+          "NLog.Web.AspNetCore": "5.0.0-rc1",
           "Swashbuckle.AspNetCore": "5.6.3"
         },
         "runtime": {
@@ -1904,6 +1937,27 @@
       "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
+    },
+    "NLog/5.0.0-rc1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+ce3zuXplax1HLxFieqA7BwxLjdmZacYblz6AcfrqxfFWytMz9SHBwUas45aamVrQhTKUA4m5la464/RxnCZPg==",
+      "path": "nlog/5.0.0-rc1",
+      "hashPath": "nlog.5.0.0-rc1.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/5.0.0-rc1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6s+q7GbECcvpngY4Tjxsyf5xO1XAyDHbafhoIE789KbJnqGzuyXlDimDnqNvtLqZZYEnTDA4seaWJd0DDR91Uw==",
+      "path": "nlog.extensions.logging/5.0.0-rc1",
+      "hashPath": "nlog.extensions.logging.5.0.0-rc1.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/5.0.0-rc1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q5yIdjzbudbjsqZFrwACgdh2JZWHqVak/wkNiSmtPQbOZUaUTGkFBRrn5A/IMscMCXkvcKOsghPisu8Agu94ew==",
+      "path": "nlog.web.aspnetcore/5.0.0-rc1",
+      "hashPath": "nlog.web.aspnetcore.5.0.0-rc1.nupkg.sha512"
     },
     "NuGet.Frameworks/5.0.0": {
       "type": "package",
