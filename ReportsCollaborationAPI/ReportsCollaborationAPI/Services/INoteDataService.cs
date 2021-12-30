@@ -11,8 +11,6 @@ namespace ReportsCollaborationAPI.Services
 
         void AddNote(Note note);
 
-        void AddNotes(List<Note> notes);
-
         void EditNote(Note note);
 
         void DeleteNote(Note note); 
