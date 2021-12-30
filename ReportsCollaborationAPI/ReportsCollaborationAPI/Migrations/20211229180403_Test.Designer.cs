@@ -8,7 +8,7 @@ using ReportsCollaborationAPI.Models;
 
 namespace ReportsCollaborationAPI.Migrations
 {
-    [DbContext(typeof(NoteContext))]
+    [DbContext(typeof(CollaborationSystemContext))]
     [Migration("20211229180403_Test")]
     partial class Test
     {

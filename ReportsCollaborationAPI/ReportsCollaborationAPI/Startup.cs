@@ -23,10 +23,12 @@ namespace ReportsCollaborationAPI
         {
             services.AddControllers();
 
-            services.AddDbContextPool<NoteContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SeaLightsCollaborationSystemConnectionString")));
+            services.AddDbContextPool<CollaborationSystemContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SeaLightsCollaborationSystemConnectionString")));
 
             services.AddScoped<INoteDataService, NoteDataService>();
-            
+
+            services.AddScoped<IFileDataService, FileDataService>();
+
             //services.AddSwaggerGen(c =>
             //{
             //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ReportsCollaborationAPI", Version = "v1" });

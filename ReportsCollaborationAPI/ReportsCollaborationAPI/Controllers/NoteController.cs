@@ -2,9 +2,6 @@
 using Microsoft.Extensions.Logging;
 using ReportsCollaborationAPI.Models;
 using ReportsCollaborationAPI.Services;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ReportsCollaborationAPI.Controllers
 {
@@ -20,29 +17,29 @@ namespace ReportsCollaborationAPI.Controllers
             _noteDataService = noteDataService;
         }
 
-        [HttpGet]
-        [Route("[controller]")]
-        public IActionResult GetNotes()
-        {
-            return Ok(_noteDataService.GetNotes());
-        }
+        //[HttpGet]
+        //[Route("[controller]/GetNoteById/{noteId}")]
+        //public IActionResult GetNoteById(int noteId)
+        //{
+        //    var note = _noteDataService.GetNoteById(noteId);
+
+        //    if(note == null)
+        //    {
+        //        return NotFound($"Note with id: {noteId} was not found");
+        //    }
+
+        //    return Ok(note);
+        //}
 
         [HttpGet]
-        [Route("[controller]/{noteId}")]
-        public IActionResult GetNoteById(int noteId)
+        [Route("[controller]/GetNotes/{reportId}/{collaboratorId}")]
+        public IActionResult GetNotes(int reportId, int collaboratorId)
         {
-            var note = _noteDataService.GetNoteById(noteId);
-
-            if(note == null)
-            {
-                return NotFound($"Note with id: {noteId} was not found");
-            }
-
-            return Ok(note);
+            return Ok(_noteDataService.GetNotes(reportId, collaboratorId));
         }
 
         [HttpPost]
-        [Route("[controller]")]
+        [Route("[controller]/AddNote")]
         public IActionResult AddNote(Note note)
         {
             if(note.Title == null)
@@ -56,38 +53,38 @@ namespace ReportsCollaborationAPI.Controllers
                 Created($"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{HttpContext.Request.Path}/{note.Id}", note) : Created($"", note);
         }
 
-        [HttpPatch]
-        [Route("[controller]/{noteId}")]
-        public IActionResult EditNote(int noteId, Note note)
-        {
-            var existingNote = _noteDataService.GetNoteById(noteId);
+        //[HttpPatch]
+        //[Route("[controller]/{noteId}")]
+        //public IActionResult EditNote(int noteId, Note note)
+        //{
+        //    var existingNote = _noteDataService.GetNoteById(noteId);
 
-            if (existingNote == null)
-            {
-                return NotFound($"Note with id: {noteId} was not found");
-            }
+        //    if (existingNote == null)
+        //    {
+        //        return NotFound($"Note with id: {noteId} was not found");
+        //    }
 
-            note.Id = existingNote.Id;
+        //    note.Id = existingNote.Id;
 
-            _noteDataService.EditNote(note);
+        //    _noteDataService.EditNote(note);
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
-        [HttpDelete]
-        [Route("[controller]/{noteId}")]
-        public IActionResult DeleteNote(int noteId)
-        {
-            var note =_noteDataService.GetNoteById(noteId);
+        //[HttpDelete]
+        //[Route("[controller]/{noteId}")]
+        //public IActionResult DeleteNote(int noteId)
+        //{
+        //    var note =_noteDataService.GetNoteById(noteId);
 
-            if (note == null)
-            {
-                return NotFound($"Note with id: {noteId} was not found");
-            }
+        //    if (note == null)
+        //    {
+        //        return NotFound($"Note with id: {noteId} was not found");
+        //    }
 
-            _noteDataService.DeleteNote(note);
+        //    _noteDataService.DeleteNote(note);
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
     }
 }
