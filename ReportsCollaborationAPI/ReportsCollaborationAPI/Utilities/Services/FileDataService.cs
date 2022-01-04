@@ -52,14 +52,14 @@ namespace ReportsCollaborationAPI.Services
                 //Create a new Name for the file due to security reasons.
                 string fileName = $"{DateTime.Now.Ticks}_{parentId}_{collaboratorId}{extension}";
 
-                var pathBuilt = Path.Combine(Directory.GetCurrentDirectory(), $"Repository\\files\\{parentId}\\{collaboratorId}");
+                var pathBuilt = Path.Combine(Directory.GetCurrentDirectory(), $"FileRepository\\files\\{parentId}\\{collaboratorId}");
 
                 if (!Directory.Exists(pathBuilt))
                 {
                     Directory.CreateDirectory(pathBuilt);
                 }
 
-                var path = Path.Combine(Directory.GetCurrentDirectory(), $"Repository\\files\\{parentId}\\{collaboratorId}", fileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), $"FileRepository\\files\\{parentId}\\{collaboratorId}", fileName);
 
                 var fileToSave = new Models.File()
                 {
