@@ -18,7 +18,7 @@ namespace ReportsCollaborationAPI.Controllers
         [Route("[controller]/GetNotes/{reportId}/{collaboratorId}")]
         public IActionResult GetNotes(int reportId, int collaboratorId)
         {
-            //get all report user notes
+            //get all report user notes and public notes
             var notes = _noteDataService.GetNotes(reportId, collaboratorId);
 
             return Ok(notes);

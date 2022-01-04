@@ -45,13 +45,6 @@ didnt have enuogh time for testing upload and download files api methods but all
 I used UNIX for unit testing and created Mocks. 
 
 
-If i had more time i would add:
-more input validations
-exception handeling
-more tests
-making the api more generic and reuseable
-add more web api methods CRUD
-
 
  
 
