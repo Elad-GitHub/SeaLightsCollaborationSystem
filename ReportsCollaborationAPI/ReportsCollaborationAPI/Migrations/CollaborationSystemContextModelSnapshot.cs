@@ -9,7 +9,7 @@ using ReportsCollaborationAPI.Models;
 namespace ReportsCollaborationAPI.Migrations
 {
     [DbContext(typeof(CollaborationSystemContext))]
-    partial class NoteContextModelSnapshot : ModelSnapshot
+    partial class CollaborationSystemContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

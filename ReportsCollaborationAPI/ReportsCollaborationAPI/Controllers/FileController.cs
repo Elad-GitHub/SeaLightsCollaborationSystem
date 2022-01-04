@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ReportsCollaborationAPI.Services;
 using ReportsCollaborationAPI.Utilities;
 using ReportsCollaborationAPI.Utilities.Contracts;
+using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -56,8 +57,15 @@ namespace ReportsCollaborationAPI.Controllers
             {
                 return BadRequest(new { message = validationMessage });
             }
-
-            await _fileDataService.SaveFile(file, parentId, collaboratorId);
+            
+            try
+            {
+                await _fileDataService.SaveFile(file, parentId, collaboratorId);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
 
             return Ok("File Uploaded");
         }

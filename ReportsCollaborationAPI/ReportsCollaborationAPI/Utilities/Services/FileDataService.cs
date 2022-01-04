@@ -79,7 +79,7 @@ namespace ReportsCollaborationAPI.Services
             }
             catch (Exception e)
             {
-                //log error
+                throw new ArgumentException("File upload failed ");
             }
 
             return isSaveSuccess;

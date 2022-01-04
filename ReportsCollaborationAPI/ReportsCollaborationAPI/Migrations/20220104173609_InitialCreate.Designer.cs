@@ -10,8 +10,8 @@ using ReportsCollaborationAPI.Models;
 namespace ReportsCollaborationAPI.Migrations
 {
     [DbContext(typeof(CollaborationSystemContext))]
-    [Migration("20211230014320_FixedMigition")]
-    partial class FixedMigition
+    [Migration("20220104173609_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -1,6 +1,10 @@
 Design:
 
-Please edit the connection string server name to your local sql server - the app builds a db and fetching/pushing from/to it.
+1.Please edit the connection string server name to your local sql server - the app builds a db and fetching/pushing from/to it.
+
+2.Run in Pacakage Manager Console 
+	1. Add-Migration InitialCreate
+	2. Update-Database
 
 DB:
 two tables
