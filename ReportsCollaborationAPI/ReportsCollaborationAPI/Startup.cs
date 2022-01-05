@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ReportsCollaborationAPI.Models;
-using ReportsCollaborationAPI.Services;
+using ReportsCollaborationAPI.Application;
+using ReportsCollaborationAPI.Infrastructure;
 
 namespace ReportsCollaborationAPI
 {

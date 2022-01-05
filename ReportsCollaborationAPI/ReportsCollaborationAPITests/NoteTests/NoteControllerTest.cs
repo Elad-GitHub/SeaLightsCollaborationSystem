@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using ReportsCollaborationAPI.Application;
 using ReportsCollaborationAPI.Controllers;
-using ReportsCollaborationAPI.Models;
-using ReportsCollaborationAPI.Services;
+using ReportsCollaborationAPI.Domain;
 using System.Collections.Generic;
 using Xunit;
 

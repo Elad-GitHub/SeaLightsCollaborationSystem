@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportsCollaborationAPI", "ReportsCollaborationAPI\ReportsCollaborationAPI.csproj", "{EC74408E-BD56-41E2-BE7F-66AA61920FF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportsCollaborationAPITests", "ReportsCollaborationAPITests\ReportsCollaborationAPITests.csproj", "{5E7A0EF1-2763-4DD3-AB34-CC8B25499598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportsCollaborationAPITests", "ReportsCollaborationAPITests\ReportsCollaborationAPITests.csproj", "{5E7A0EF1-2763-4DD3-AB34-CC8B25499598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

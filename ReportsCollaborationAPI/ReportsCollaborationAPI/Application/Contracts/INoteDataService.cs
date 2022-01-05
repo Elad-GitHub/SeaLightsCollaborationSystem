@@ -1,7 +1,7 @@
-﻿using ReportsCollaborationAPI.Models;
+﻿using ReportsCollaborationAPI.Domain;
 using System.Collections.Generic;
 
-namespace ReportsCollaborationAPI.Services
+namespace ReportsCollaborationAPI.Application
 {
     public interface INoteDataService
     {

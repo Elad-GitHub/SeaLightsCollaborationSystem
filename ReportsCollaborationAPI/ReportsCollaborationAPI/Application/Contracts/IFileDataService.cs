@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
-using ReportsCollaborationAPI.Models;
+using ReportsCollaborationAPI.Domain;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ReportsCollaborationAPI.Services
+namespace ReportsCollaborationAPI.Application
 {
     public interface IFileDataService
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
-using ReportsCollaborationAPI.Utilities.Contracts;
+using ReportsCollaborationAPI.Application;
 using System;
 
-namespace ReportsCollaborationAPI.Utilities
+namespace ReportsCollaborationAPI.Infrastructure
 {
     public class FileValidator : IValidator
     {
@@ -15,11 +15,12 @@ namespace ReportsCollaborationAPI.Utilities
 
         public Tuple<bool, string> Validate()
         {
-            if(!ValidateFileType(fileToValidate))
+            if(!ValidateFileFormat(fileToValidate))
             {
-                return new (false, "Invalid File! The file upload has been blocked because its type can not be .exe / .js / .vbs");
+                return new (false, "Invalid File! The file upload has been blocked because its format can not be .exe / .js / .vbs");
             }
-            else if (!ValidateFileSize(fileToValidate))
+
+            if (!ValidateFileSize(fileToValidate))
             {
                 return new (false, "Invalid File! The file upload has been blocked because its size can not be bigger than 10 mb");
             }
@@ -34,7 +35,7 @@ namespace ReportsCollaborationAPI.Utilities
         }
 
         //check if file type is valid
-        public bool ValidateFileType(IFormFile file)
+        public bool ValidateFileFormat(IFormFile file)
         {
             var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
 

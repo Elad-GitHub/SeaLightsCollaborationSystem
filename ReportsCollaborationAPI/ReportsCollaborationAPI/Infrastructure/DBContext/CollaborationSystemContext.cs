@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ReportsCollaborationAPI.Domain;
 
-namespace ReportsCollaborationAPI.Models
+namespace ReportsCollaborationAPI.Infrastructure
 {
     public class CollaborationSystemContext : DbContext
     {

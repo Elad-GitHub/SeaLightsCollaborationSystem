@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ReportsCollaborationAPI.Services;
-using ReportsCollaborationAPI.Utilities;
-using ReportsCollaborationAPI.Utilities.Contracts;
+using ReportsCollaborationAPI.Application;
+using ReportsCollaborationAPI.Infrastructure;
 using System;
 using System.IO;
 using System.Threading;

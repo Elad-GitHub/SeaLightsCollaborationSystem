@@ -1,4 +1,4 @@
-﻿namespace ReportsCollaborationAPI.Models
+﻿namespace ReportsCollaborationAPI.Domain
 {
     public enum PrivacyLevel
     {

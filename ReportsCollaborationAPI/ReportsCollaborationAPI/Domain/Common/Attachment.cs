@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ReportsCollaborationAPI.Models
+namespace ReportsCollaborationAPI.Domain
 {
-    public class Attachment
+    public abstract class Attachment
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ReportsCollaborationAPI.Models;
+using ReportsCollaborationAPI.Infrastructure;
 
 namespace ReportsCollaborationAPI.Migrations
 {
@@ -19,7 +19,7 @@ namespace ReportsCollaborationAPI.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ReportsCollaborationAPI.Models.File", b =>
+            modelBuilder.Entity("ReportsCollaborationAPI.Domain.File", b =>
                 {
                     b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace ReportsCollaborationAPI.Migrations
                     b.ToTable("Files");
                 });
 
-            modelBuilder.Entity("ReportsCollaborationAPI.Models.Note", b =>
+            modelBuilder.Entity("ReportsCollaborationAPI.Domain.Note", b =>
                 {
                     b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
-using ReportsCollaborationAPI.Models;
+using ReportsCollaborationAPI.Application;
+using ReportsCollaborationAPI.Domain;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReportsCollaborationAPI.Services
-{
+namespace ReportsCollaborationAPI.Infrastructure
+{ 
     public class FileDataService : IFileDataService
     {
         private CollaborationSystemContext _Context;
@@ -17,7 +18,7 @@ namespace ReportsCollaborationAPI.Services
             _Context = context;
         }
 
-        public List<Models.File> GetFiles(int parentId, int collaboratorId)
+        public List<Domain.File> GetFiles(int parentId, int collaboratorId)
         {
             return _Context.Files.Where(note => note.ParentId == parentId && (note.Privacy == PrivacyLevel.Public ||
                                                 (note.Privacy == PrivacyLevel.Private && note.CollaboratorId == collaboratorId))).ToList();
@@ -61,7 +62,7 @@ namespace ReportsCollaborationAPI.Services
 
                 var path = Path.Combine(Directory.GetCurrentDirectory(), $"FileRepository\\files\\{parentId}\\{collaboratorId}", fileName);
 
-                var fileToSave = new Models.File()
+                var fileToSave = new Domain.File()
                 {
                     Link = path,
                     ParentId = parentId,
@@ -85,7 +86,7 @@ namespace ReportsCollaborationAPI.Services
             return isSaveSuccess;
         }
 
-        private void AddFile(Models.File file)
+        private void AddFile(Domain.File file)
         {
             _Context.Files.Add(file);
 

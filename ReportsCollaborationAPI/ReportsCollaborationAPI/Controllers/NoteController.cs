@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ReportsCollaborationAPI.Models;
-using ReportsCollaborationAPI.Services;
+using ReportsCollaborationAPI.Application;
+using ReportsCollaborationAPI.Domain;
 
 namespace ReportsCollaborationAPI.Controllers
 {

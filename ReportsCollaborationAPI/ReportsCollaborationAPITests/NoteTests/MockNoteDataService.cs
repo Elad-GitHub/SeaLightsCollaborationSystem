@@ -1,5 +1,5 @@
-﻿using ReportsCollaborationAPI.Models;
-using ReportsCollaborationAPI.Services;
+﻿using ReportsCollaborationAPI.Application;
+using ReportsCollaborationAPI.Domain;
 using System.Collections.Generic;
 using System.Linq;
 
